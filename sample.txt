@@ -1,0 +1,43 @@
+function calculator(callback, operator, a, b) {
+  a = parseInt(a);
+  b = parseInt(b);
+  let result = 0;
+  switch (operator) {
+    case "+":
+      result = a + b;
+      callback(result);
+      break;
+    case "-":
+      result = a - b;
+      callback(result);
+      break;
+    case "*":
+      result = a * b;
+      callback(result);
+      break;
+    case "/":
+      result = a / b;
+      callback(result);
+      break;
+    case "%":
+      result = a % b;
+      callback(result);
+      break;
+    default:
+      callback(`Please specify following operator +, -, / and %`);
+      break;
+  }
+}
+
+let value1 = prompt("first value:");
+let operator = prompt("Operator  +, -, / and %:");
+let value2 = prompt("second value:");
+
+calculator(
+  function (result) {
+    console.log("Answer:", result);
+  },
+  operator,
+  value1,
+  value2
+);
